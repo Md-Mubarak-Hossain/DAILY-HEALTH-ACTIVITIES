@@ -1,0 +1,8 @@
+.btn-pos {
+    position: absolute;
+    bottom: 0;
+}
+
+.parent-pos {
+    position: relative;
+}
