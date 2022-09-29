@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Activities = () => {
 
-    const notify = () => toast("Wow so easy!");
+    const notify = () => toast("All Done!");
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([]);
     const [count, setCount] = useState(0);
