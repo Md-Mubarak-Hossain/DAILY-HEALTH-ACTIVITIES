@@ -1,8 +1,11 @@
+import { Toast } from 'bootstrap';
 import React, { useState, useEffect } from 'react';
 import Activity from '../Activity/Activity';
 import Profile from '../Profile/Profile';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Activities = () => {
+    const notify = () => toast("Wow so easy!");
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([]);
     const [count, setCount] = useState(0);
@@ -62,8 +65,13 @@ const Activities = () => {
                             </div>
                         </div>
                         <div className='mt-5'>
-                            <button className='btn form-control bg-primary text-white fw-bold'>Activity Completed</button>
+
+
+                            <button onClick={notify} className='btn form-control bg-primary text-white fw-bold'>Activity Completed</button>
+                            <ToastContainer />
+
                         </div>
+
                     </div>
 
                 </div>
