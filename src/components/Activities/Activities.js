@@ -4,7 +4,9 @@ import Activity from '../Activity/Activity';
 import Profile from '../Profile/Profile';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 const Activities = () => {
+
     const notify = () => toast("Wow so easy!");
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([]);
@@ -16,9 +18,10 @@ const Activities = () => {
             .then(data => setProducts(data))
     }, [])
     const handleClick = (product) => {
-        console.log('click');
+        // console.log('click');
         const newCart = [...cart, product]
         setCart(newCart)
+
     }
     let tim = 0;
     for (const product of cart) {
@@ -65,11 +68,8 @@ const Activities = () => {
                             </div>
                         </div>
                         <div className='mt-5'>
-
-
                             <button onClick={notify} className='btn form-control bg-primary text-white fw-bold'>Activity Completed</button>
                             <ToastContainer />
-
                         </div>
 
                     </div>
