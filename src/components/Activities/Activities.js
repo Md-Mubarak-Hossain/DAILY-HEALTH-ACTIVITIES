@@ -6,29 +6,31 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Activities = () => {
-
     const notify = () => toast("All Done!");
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([]);
     const [count, setCount] = useState(0);
+
     useEffect(() => {
         fetch('activities.json')
             .then(res => res.json())
             // .then(data => console.log(data))
             .then(data => setProducts(data))
     }, [])
+
     const handleClick = (product) => {
         // console.log('click');
         const newCart = [...cart, product]
         setCart(newCart)
-
     }
+
     let tim = 0;
     for (const product of cart) {
         tim = tim + product.time;
     }
+
     return (
-        <div className='row row-cos-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 '>
+        <div className='row row-cos-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 bg-secondary'>
             <div className='col col-md-9 col-lg-9 col-xl-9 col-xxl-9'>
                 <h2>Daily activities</h2>
                 <div className='row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-3'>
@@ -41,11 +43,11 @@ const Activities = () => {
                     }
                 </div>
             </div>
-            <div className='col col-md-3 col-lg-3 col-xl-3 col-xxl-3 bg-success'>
+            <div className='col col-md-3 col-lg-3 col-xl-3 col-xxl-3 bg-warning rounded'>
 
                 <div className='sticky-top '>
                     <Profile></Profile>
-                    {/* ............. */}
+
                     <div className='sticky-top'>
                         <div className='AddBreak mt-4'>
                             <h5>Add A Break</h5>
@@ -67,7 +69,7 @@ const Activities = () => {
                                 <div className='text-light'>{count}second</div>
                             </div>
                         </div>
-                        <div className='mt-5'>
+                        <div className='py-5'>
                             <button onClick={notify} className='btn form-control bg-primary text-white fw-bold'>Activity Completed</button>
                             <ToastContainer />
                         </div>

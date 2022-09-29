@@ -2,7 +2,7 @@ import React from 'react';
 
 const Profile = () => {
     return (
-        <div>
+        <div className='bg-info'>
             <div className="my-profile">
                 <div className='d-flex mt-4'>
                     <div className='rounded-4 bg-light'>
@@ -10,7 +10,7 @@ const Profile = () => {
                     </div>
                     <div>
                         <p>Md Mubarak Hossain</p>
-                        <p>Location</p>
+                        <p>Raipura,Narsingdi</p>
                     </div>
                 </div>
                 <div className='bg-light d-flex rounded justify-content-between p-2 mt-3'>
@@ -20,7 +20,7 @@ const Profile = () => {
                     </div>
                     <div>
                         <h4>5.6</h4>
-                        <p>Weight</p>
+                        <p>Height</p>
                     </div>
                     <div>
                         <h4>26<small>yrs</small></h4>
