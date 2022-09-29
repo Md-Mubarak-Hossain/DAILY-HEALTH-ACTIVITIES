@@ -8,14 +8,11 @@ function App() {
   return (
     <div className='App'>
       <Header></Header>
-      <div className='row row-cols-2'>
-        <div className="col-9 bg-light">
-          <Activities></Activities>
-        </div>
-        <div className='col-3 bg-warning'>
-          <Cart></Cart>
-        </div>
-      </div>
+
+
+      <Activities></Activities>
+
+
     </div>
   );
 }
