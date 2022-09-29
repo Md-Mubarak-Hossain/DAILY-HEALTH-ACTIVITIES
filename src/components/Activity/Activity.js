@@ -7,14 +7,12 @@ const Activity = (props) => {
     return (
         <div className='p-2'>
             <div className='border border-success rounded parent-pos'>
-                <div className='p-3'>
+                <div className='p-3 bg-info'>
                     <img src={picture} className="w-100" alt="" />
                     <h5>{name}</h5>
-                    <p>age={age} Years</p>
-                    {/* <h2>This is product</h2> */}
-                    <p>time={time}sec</p>
-                    <h1>time={time}</h1>
-                    <button onClick={() => props.handleClick(props.product)}>Add Cart</button>
+                    <h6>age={age} Years</h6>
+                    <h5>time={time}sec</h5>
+                    <button className='form-control btn-primary text-white fw-bold btn btn-outline-danger' onClick={() => props.handleClick(props.product)}>Add To List</button>
                 </div>
             </div>
         </div>

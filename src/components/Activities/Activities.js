@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Activity from '../Activity/Activity';
+import Profile from '../Profile/Profile';
 
 const Activities = () => {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([]);
+    const [count, setCount] = useState(0);
     useEffect(() => {
         fetch('activities.json')
             .then(res => res.json())
@@ -33,10 +35,38 @@ const Activities = () => {
                     }
                 </div>
             </div>
-            <div className='col-3'>
-                <h2>This cart</h2>
-                <p>cart length:{cart.length}</p>
-                <p>time:{tim}</p>
+            <div className='col-3 bg-success'>
+
+                <div className='sticky-top '>
+                    <Profile></Profile>
+                    {/* ............. */}
+                    <div className='sticky-top'>
+                        <div className='AddBreak mt-4'>
+                            <h5>Add A Break</h5>
+                            <div className='d-flex bg-secondary rounded  justify-content-center py-2'>
+                                <button onClick={() => setCount(10)} className='p-3 rounded-5 bg-light'>10s</button>
+                                <button onClick={() => setCount(20)} className='p-3 rounded-5 bg-light'>20s</button>
+                                <button onClick={() => setCount(30)} className='p-3 rounded-5 bg-light'>30s</button>
+                                <button onClick={() => setCount(40)} className='p-3 rounded-5 bg-light'>40s</button>
+                            </div>
+                        </div>
+                        <div className='mt-4'>
+                            <h5>Exercise Detailes</h5>
+                            <div className='d-flex bg-secondary py-3 px-2 justify-content-between rounded'>
+                                <div className='text-dark'>Exercise time</div>
+                                <div className='text-light'>{tim}second</div>
+                            </div>
+                            <div className='d-flex bg-secondary py-3 px-2 justify-content-between rounded mt-4'>
+                                <div>Break time</div>
+                                <div className='text-light'>{count}second</div>
+                            </div>
+                        </div>
+                        <div className='mt-5'>
+                            <button className='btn form-control bg-primary text-white fw-bold'>Activity Completed</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     );
