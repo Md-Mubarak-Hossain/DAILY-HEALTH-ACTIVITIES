@@ -28,10 +28,10 @@ const Activities = () => {
         tim = tim + product.time;
     }
     return (
-        <div className='row row-cols-2'>
-            <div className='col-9'>
+        <div className='row row-cos-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 '>
+            <div className='col col-md-9 col-lg-9 col-xl-9 col-xxl-9'>
                 <h2>Daily activities</h2>
-                <div className='row row-cols-3'>
+                <div className='row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-3'>
                     {
                         products.map(product => <Activity
                             key={product.id}
@@ -41,7 +41,7 @@ const Activities = () => {
                     }
                 </div>
             </div>
-            <div className='col-3 bg-success'>
+            <div className='col col-md-3 col-lg-3 col-xl-3 col-xxl-3 bg-success'>
 
                 <div className='sticky-top '>
                     <Profile></Profile>
